@@ -1,14 +1,19 @@
 @keyframes brilhando {
-  from {
-    opacity: 0.4;
-    -webkit-box-shadow:0px 0px 47px 10px oklch(79.579% 0.16385 82.171 / 0.561);
-    -moz-box-shadow: 0px 0px 47px 10px oklch(54.824% 0.1117 83.503);
-    box-shadow: 0px 0px 47px 10px oklch(79.5% 0.184 86.047);
+  0%,20% {
+    opacity: 0.6;
+    box-shadow: 0px 0px 47px 10px var(--cor-brilho, #eab308); 
   }
-  to {
+  40%, 60% {
     opacity: 1;
-    -webkit-box-shadow:0px 0px 47px 10px oklch(79.579% 0.16385 82.171);
-    -moz-box-shadow: 0px 0px 47px 10px oklch(79.5% 0.184 86.047);
-    box-shadow: 0px 0px 47px 10px oklch(79.5% 0.184 86.047);
+    box-shadow: 0px 0px 47px 10px var(--cor-brilho, #eab308);
   }
+  80%, 100% {
+    opacity: 0.6;
+    box-shadow: 0px 0px 10px 2px var(--cor-brilho, #eab308);
+  }
+}
+
+/* Criamos uma classe utilitária para ativar a animação */
+.animar-pisca {
+  animation: brilhando 4s ease-in-out infinite;
 }
